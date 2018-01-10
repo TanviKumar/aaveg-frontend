@@ -1,4 +1,4 @@
-var iterations = 0;
+var iterations = -35;
 var bg_image;
 var full_rock;
 var right_rock;
@@ -23,7 +23,7 @@ function setup() {
     left_rock = loadImage("imgs/left_rock.png");
     broken_rock = loadImage("imgs/broken_rock.png");
     aaveg = loadImage("imgs/Layer2.png");
-    frameRate(8);
+    frameRate(60);
 }
 
 function draw() {
@@ -32,39 +32,19 @@ function draw() {
     noStroke();
 	rect(0,0,windowWidth, windowHeight);
 	background(bg_image);
-	if(iterations < 16 && iterations%4==0) {
-		push();
-		translate(windowWidth/2 - full_rock.width/8, windowHeight - full_rock.height/3);
-		rotate(radians(-5));
-		imageMode(CENTER);
-		image(full_rock,0,0);
-		pop();
+	if(iterations*10 < windowHeight*2/5) {
+		image(full_rock, windowWidth/2 - windowWidth/3, iterations*10, windowWidth/2, windowHeight*2/3);
+		
 	}
-	else if (iterations < 16 && iterations%4==1) {
-		push();
-		translate(windowWidth/2 - full_rock.width/8 , windowHeight - full_rock.height/3);
-		rotate(radians(5));
-		imageMode(CENTER);
-		image(full_rock,0,0);
-		pop();
-
-	}
-	else if (iterations < 16 ) {
-		push();
-		translate(windowWidth/2 - full_rock.width/8 , windowHeight - full_rock.height/3);
-		imageMode(CENTER);
-		image(full_rock, 0, 0);
-		pop();
-	}
-	else if (iterations == 16){
+	else if (iterations*10 == windowHeight*2/5){
 		image(broken_rock, windowWidth/2 - broken_rock.width/2, windowHeight/2 - broken_rock.height/4);
 		broken = true;
 	}
-	else if (iterations > 16){
+	else if (iterations*10 > windowHeight*2/5){
 		image(left_rock, windowWidth/2 - left_rock.width/2 - left_rock.width/sizeVar, windowHeight*3/4 - left_rock.height/2);
 		image(right_rock, windowWidth/2 - right_rock.width/2 + right_rock.width/sizeVar, windowHeight*3/4 - right_rock.height/2);
 		image(aaveg, windowWidth/2 - aaveg.width/sizeVar, windowHeight*3/4 - aaveg.height/sizeVar, aaveg.width*2/sizeVar, aaveg.height*2/sizeVar);
-		if(sizeVar>8)
+		if(sizeVar>10)
 			sizeVar--;
 		else
 			noLoop();
