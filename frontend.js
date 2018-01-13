@@ -47,7 +47,7 @@ function draw() {
 		bounced = true;
 	}
 	else if (bounced == true && complete == false) {
-		if (back_up <= windowHeight/12){
+		if (back_up <= windowHeight/20){
 			image(full_rock, windowWidth/2 - windowWidth/8, windowHeight*2/5 - back_up, windowWidth/4, windowHeight/3);
 			back_up += 10;
 		}
