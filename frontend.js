@@ -14,6 +14,16 @@ var back_up = 0;
 var back_down = 0;
 var rock_diff = 24;
 
+function preload() {
+	bg_image = loadImage("imgs/asset1.png");
+    full_rock = loadImage("imgs/full_rock.png");
+    right_rock = loadImage("imgs/right_rock.png");
+    left_rock = loadImage("imgs/left_rock.png");
+    broken_rock = loadImage("imgs/broken_rock.png");
+    aaveg = loadImage("imgs/Layer2.png");
+    carved = loadImage("imgs/carved.png");
+}
+
 function setup() {
 	createCanvas(windowWidth,windowHeight); 
 	background(51);
@@ -21,14 +31,6 @@ function setup() {
 	fill(color(126, 166, 247));
     noStroke();
     rect(0,0,windowWidth, windowHeight);
-
-    bg_image = loadImage("imgs/asset1.png");
-    full_rock = loadImage("imgs/full_rock.png");
-    right_rock = loadImage("imgs/right_rock.png");
-    left_rock = loadImage("imgs/left_rock.png");
-    broken_rock = loadImage("imgs/broken_rock.png");
-    aaveg = loadImage("imgs/Layer2.png");
-    carved = loadImage("imgs/carved.png");
     frameRate(60);
 }
 
