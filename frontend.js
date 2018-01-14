@@ -45,7 +45,6 @@ function draw() {
 		
 	}
 	else if (iterations*20 >= windowHeight*3/5  && bounced == false && complete == false && windowHeight > 750 && windowWidth > 420){
-		//image(broken_rock, windowWidth/2 - broken_rock.width/2, windowHeight/2 - broken_rock.height/4);
 		bounced = true;
 	}
 	else if (bounced == true && complete == false && windowHeight > 750 && windowWidth > 420) {
@@ -76,6 +75,8 @@ function draw() {
 			noLoop();
 	}
 	else {
+		image(left_rock, windowWidth/2 - left_rock.width/10 - left_rock.width/rock_diff, windowHeight*3/4 - left_rock.height/10, left_rock.width/5, left_rock.height/5);
+		image(right_rock, windowWidth/2 - right_rock.width/10 + right_rock.width/rock_diff, windowHeight*3/4 - right_rock.height/10, right_rock.width/5, right_rock.height/5);
 		image(aaveg, windowWidth/2 - aaveg.width/sizeVar, windowHeight/2 - aaveg.height/sizeVar, aaveg.width*2/sizeVar, aaveg.height*2/sizeVar);
 		image(carved, windowWidth/2 - carved.width/sizeVar, windowHeight*3/4 - carved.height/sizeVar, carved.width*2/sizeVar, carved.height*2/sizeVar);
 		if(sizeVar>10)
